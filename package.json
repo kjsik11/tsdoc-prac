@@ -1,5 +1,5 @@
 {
-  "name": "next-tailwind-ts-template",
+  "name": "typedoc-test",
   "version": "3.4.4",
   "description": "template project",
   "scripts": {
@@ -23,6 +23,7 @@
     "joi": "17.4.2",
     "next": "11.0.1",
     "nprogress": "0.2.0",
+    "pm2": "5.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "typedoc": "0.21.5"
