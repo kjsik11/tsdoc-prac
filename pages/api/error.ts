@@ -6,11 +6,17 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { withErrorHandler } from '@utils/with-error-handler';
 
+/**
+ *
+ *
+ *
+ * @ignore
+ */
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method === 'GET') {
     throw new Error('Unexpected error occured!');
     return res.json({ status: 'ok' });
   }
 };
-
+/**@ignore */
 export default withErrorHandler(handler);
