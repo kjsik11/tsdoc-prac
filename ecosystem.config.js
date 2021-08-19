@@ -4,6 +4,7 @@ module.exports = {
       name: 'tsdoc',
       script: 'yarn',
       args: 'start',
+      cwd: '/home/ec2-user/Programming/tsdoc-prac',
       instances: 2,
       autorestart: true,
       watch: false,
