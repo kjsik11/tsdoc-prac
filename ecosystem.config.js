@@ -4,7 +4,7 @@ module.exports = {
       name: 'tsdoc',
       script: 'npm',
       args: 'start',
-      cwd: '/home/ec2-user/Programming/tsdoc-prac',
+      cwd: './',
       autorestart: true,
       watch: true,
     },
