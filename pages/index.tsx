@@ -2,7 +2,7 @@
  * @template PageComponent
  */
 
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import NextLink from 'next/link';
 
 import { useUI } from '@components/context';
@@ -30,6 +30,18 @@ export class Statistics {
 export default function IndexPage() {
   const { showModal, closeModal, showNoti } = useUI();
   const [result, setResult] = useState<string | null>(null);
+  const [file, setFile] = useState<File | null>(null);
+
+  const handleFile = useCallback(() => {
+    if (!file) return;
+
+    const textReader = new FileReader();
+    textReader.onload = () => {
+      const text = textReader.result;
+      console.log('text', text);
+    };
+    textReader.readAsText(file);
+  }, [file]);
 
   return (
     <div className="mx-auto max-w-screen-lg text-2xl pt-4 h-[1200px] flex justify-center">
@@ -140,6 +152,18 @@ export default function IndexPage() {
         </div>
         <p className="text-lg">{result || 'null'}</p>
       </div>
+      <div>
+        <label>hello</label>
+        <input
+          type="file"
+          className="border border-black"
+          onChange={(e) => {
+            if (e.target.files) setFile(e.target.files[0]);
+          }}
+        />
+        <Button onClick={() => handleFile()}>Submit</Button>
+      </div>
+      {console.log(file)}
     </div>
   );
 }
